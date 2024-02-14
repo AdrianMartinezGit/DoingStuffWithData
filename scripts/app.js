@@ -27,7 +27,7 @@ const fetchData = async () => {
     const promise = await fetch('../data/data.json');
     const response = await promise.json();
 
-    console.log(response);
+    //console.log(response);
 
     return response;
 }
@@ -36,62 +36,64 @@ const createListElements = async () => {
     displayResultsDiv.innerHTML = '';
 
     let data = await fetchData();
+    let customLength = data.People.slice(0, displayResultsInt);
+    console.log(customLength);
 
     switch (sortType)
     {
         case 'id':
             if (!sortIdToggle) {
-                data.People.sort((a, b) => (a.Id > b.Id ? 1 : -1));
+                customLength.sort((a, b) => (a.Id > b.Id ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.Id > b.Id ? -1 : 1));
+                customLength.sort((a, b) => (a.Id > b.Id ? -1 : 1));
             }
         break;
 
         case 'firstname':
             if (!sortFNameToggle) {
-                data.People.sort((a, b) => (a.FirstName > b.FirstName ? 1 : -1));
+                customLength.sort((a, b) => (a.FirstName > b.FirstName ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.FirstName > b.FirstName ? -1 : 1));
+                customLength.sort((a, b) => (a.FirstName > b.FirstName ? -1 : 1));
             }
         break;
 
         case 'lastname':
             if (!sortLNameToggle) {
-                data.People.sort((a, b) => (a.LastName > b.LastName ? 1 : -1));
+                customLength.sort((a, b) => (a.LastName > b.LastName ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.LastName > b.LastName ? -1 : 1));
+                customLength.sort((a, b) => (a.LastName > b.LastName ? -1 : 1));
             }
         break;
 
         case 'email':
             if (!sortEmailToggle) {
-                data.People.sort((a, b) => (a.Email > b.Email ? 1 : -1));
+                customLength.sort((a, b) => (a.Email > b.Email ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.Email > b.Email ? -1 : 1));
+                customLength.sort((a, b) => (a.Email > b.Email ? -1 : 1));
             }
         break;
 
         case 'age':
             if (!sortAgeToggle) {
-                data.People.sort((a, b) => (a.Age > b.Age ? 1 : -1));
+                customLength.sort((a, b) => (a.Age > b.Age ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.Age > b.Age ? -1 : 1));
+                customLength.sort((a, b) => (a.Age > b.Age ? -1 : 1));
             }
         break;
 
         case 'height':
             if (!sortHeightToggle) {
-                data.People.sort((a, b) => (a.Height > b.Height ? 1 : -1));
+                customLength.sort((a, b) => (a.Height > b.Height ? 1 : -1));
             } else {
-                data.People.sort((a, b) => (a.Height > b.Height ? -1 : 1));
+                customLength.sort((a, b) => (a.Height > b.Height ? -1 : 1));
             }
         break;
     }
-    console.log(data);
+    //console.log(data);
 
     let div1 = document.createElement('div');
     let div2 = document.createElement('div');
-    div1.className = 'flex justify-center align-middle p-4 text-left text-white';
+    div1.className = 'flex justify-center align-middle p-4 text-left text-white bg-blue-500';
     div2.className = 'grid grid-cols-6 text-center';
 
     let p1 = document.createElement('p');
@@ -130,10 +132,7 @@ const createListElements = async () => {
     div2.append(p6);
     displayResultsDiv.append(hr);
 
-    data.People.map((element, index) => {
-        if (index >= displayResultsInt) 
-            return;
-
+    customLength.map((element) => {
         let div1 = document.createElement('div');
         let div2 = document.createElement('div');
         div1.className = 'flex justify-center align-middle p-4 text-left text-white';

@@ -175,6 +175,10 @@ const createListElements = async () => {
 
 createListElements();
 
+const PaginateResults = () => {
+    
+} 
+
 display10ResultsBtn.addEventListener('click', () => {
     displayResultsInt = 10;
     createListElements();

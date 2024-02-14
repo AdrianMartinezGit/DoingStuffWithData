@@ -24,7 +24,7 @@ let sortAgeToggle = false;
 let sortHeightToggle = false;
 
 const fetchData = async () => {
-    const promise = await fetch(`./data/data.json`);
+    const promise = await fetch('./data/data.json');
     const response = await promise.json();
 
     console.log(response);

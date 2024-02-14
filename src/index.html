@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Data Sorting</title>
+</head>
+<body class="bg-blue-300">
+    <div class="bg-blue-800">
+        <h1 class="text-5xl text-center font-bold underline pb-8 pt-4 text-white">
+            My Data Sorter!
+        </h1>
+    </div>
+    <hr>
+    <div class="flex justify-center align-middle p-4">
+        <div class="grid grid-cols-6 gap-12">
+            <button id="sortByIdBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by Id</button>
+            <button id="sortByFirstnameBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by First Name</button>
+            <button id="sortByLastnameBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by Last Name</button>
+            <button id="sortByEmailBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by Email</button>
+            <button id="sortByAgeBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by Age</button>
+            <button id="sortByHeightBtn" class="w-48 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">Sort by Height</button>
+        </div>
+    </div>
+    <div class="flex justify-center align-middle p-4">
+        <div class="grid grid-cols-5 gap-12">
+            <button id="display10ResultsBtn" class="w-24 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">10</button>
+            <button id="display20ResultsBtn" class="w-24 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">20</button>
+            <button id="display30ResultsBtn" class="w-24 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">30</button>
+            <button id="display40ResultsBtn" class="w-24 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">40</button>
+            <button id="display50ResultsBtn" class="w-24 h-12 bg-blue-500 hover:bg-blue-700 active:text-blue-700 active:bg-white text-white font-bold py-2 px-4 rounded-full">50</button>
+        </div>
+    </div>
+    <div>
+        <div class="flex justify-center align-middle">
+            <div class="grid grid-cols-5 gap-32"></div>
+        </div>
+        <hr>
+        <div id="displayResultsDiv">
+
+        </div>
+    </div>
+
+    <script src="./scripts/app.js" type="module"></script>
+</body>
+</html>
